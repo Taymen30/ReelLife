@@ -8,23 +8,25 @@ const methodOverride = require('method-override')
 const ensureLogin = require('./middlewares/ensure_login')
 const bcrypt = require('bcrypt')
 const app = express()
-const port = 3434
-
+const port = process.env.PORT || 3434;
 
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true
-}))
 
+app.use(express.static('public'))
+app.use(
+    session({
+      cookie: { maxAge: 1000 * 60 * 60 * 24 * 3 },
+      secret: process.env.SESSION_SECRET || "mistyrose",
+      resave: false,
+      saveUninitialized: true,
+    })
+  );
 app.use(setCurrentUser)
 app.use(expressLayouts)
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride(function (req, res) {
     if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-      var method = req.body._method
+      const method = req.body._method
       delete req.body._method
       return method
     }
@@ -120,7 +122,6 @@ app.get('/posts/:id', (req, res) => {
     })
     // JESUS
 })
-
 
 app.get('/login', (req, res) => {
     // Display login.ejs

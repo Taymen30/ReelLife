@@ -21,7 +21,6 @@ body {
 .header {
     position: sticky;
     background-color: rgba(255, 255, 255, 0.809);
-    width: 100%;
     top: 0;
     z-index: 9999;
     display: flex;
