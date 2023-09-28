@@ -1,17 +1,74 @@
-html, body {
-    
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 * {
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+p {
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(124, 152, 146);
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    
+}
 .header {
     position: sticky;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.809);
     width: 100%;
     top: 0;
     z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 120%;
+    margin: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.header a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 1px solid black; 
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    font-size: 1em;
+    padding: 5px;
+}
+.header a:visited {
+    color: black;
+}
+
+.title{
+    margin: 10px 0;
+    font-size: 4em;
+}
+
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+.center {
+    margin: 0 auto;
+    font-size: 20px;
+    fo
+}
+
+.left, .right{
+    display: flex;
+    gap: 10px; 
 }
 
 .feed {
@@ -31,11 +88,23 @@ html, body {
 }
 
 .card {
-    border: 1px solid red;
+    border: 1px solid transparent;
     max-width: 50%;
     padding: 10px;
+    background-color: rgba(255, 255, 255, 0.765);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.card h2 {
+    font-size: 2em;
 }
 
+.card .description {
+    font-size: 1.2em;
+}
+.card .date {
+    font-size: .7em;
+}
 .card .img {
     max-width: 100%;
 }
@@ -45,7 +114,31 @@ html, body {
     justify-content: space-between;
     
 }
+.card .creator {
+    font-weight: bold;
+}
 
 .card .bottom .date {
     margin: 0;
+}
+
+.card .commenter {
+    font-size: .5em;
+}
+
+.signup, .login{
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    
+}
+.signup h2 {
+    margin: 0 0 10px 0;
+}
+
+.login p {
+   padding: 0 0 10px 0;
+}
+.login h2 {
+    margin-top: 0;
 }

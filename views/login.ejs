@@ -1,9 +1,16 @@
-<form action="/login" method="post">
-    <label for="username">Username</label>
-    <input id="username" name="username" type="text" placeholder="taymen" required />
-    
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" placeholder="Secret123" required />
-    
-    <button type="submit">Login</button>
-</form>
+<div class="login">
+
+    <h2>Login</h2>
+    <p><%= message %></p>
+    <form action="/login" method="post">
+        
+        
+        <input id="username" name="username" type="text" placeholder="Username" required />
+        
+        
+        <input id="password" name="password" type="password" placeholder="Passowrd" required />
+        
+        <button type="submit">Login</button>
+    </form>
+
+</div>

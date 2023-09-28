@@ -1,22 +1,33 @@
-<h1>posts details</h1>
-
 <section class="card">
-    <h2><%= post.title%></h2>
+    <h2><%= post.title %></h2>
     <img class="img" src="<%= post.img_url %>" alt="">
     <p class="description"><%= post.description %></p>
 
     <footer class="bottom">
-        <p class="date"><%= post.date%></p>
+
+        <p class="date"><%= post.date %></p>
 
         <section id="delete">
+
             <% if (userId && userId === post.user_id) { %>
                 <form action="/posts/<%= post.id %>" method="post">
                     <input type="hidden" name="_method" value="delete">
                     <button>Delete</button>
                 </form>
-                <% } %>
+            <% } else { %>
+                <p class="creator">Posted by <%= creator %></p>
+            <% } %>
         </section>
     </footer>
+    
+    <div class="comments">
+        <form action="/posts/<%=post.id%>/comment/save" method="post" >
+            <input type="text" name="body" placeholder="Comment" style="width: 300px;">
+            <button>Post</button>
+        </form>
+        <%for(let comment of comments){%>
+        <p class="body"> <%=comment.body%> </p> 
+        <section class="commenter"><%=comment.user_name%></section>
+        <%}%>
+    </div>
 </section>
-
-
