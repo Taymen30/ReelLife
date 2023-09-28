@@ -1,13 +1,15 @@
-<h2>Create a post</h2>
+<div class="newpost">
 
-<form action="/posts/save" method="post">
-    <label for="">Title</label>
-    <input name="title" type="text">
-
-    <label for="">Image URL</label>
-    <input name="image_url" type="text">
-
-    <label for="">Description</label>
-    <input name="description" type="text">
-    <button>Post</button>
-</form>
+    <h2>Create a post</h2>
+    
+    <form action="/posts/save" method="post">
+       
+        <input name="title" type="text" placeholder="Title">
+        
+        <input name="image_url" type="text" placeholder="Image URL.jpg">
+        
+        <input class="description" name="description" type="text" placeholder="Description">
+        
+        <button>Post</button>
+    </form>
+</div>

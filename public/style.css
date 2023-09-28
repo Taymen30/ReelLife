@@ -63,7 +63,7 @@ body {
 .center {
     margin: 0 auto;
     font-size: 20px;
-    fo
+    
 }
 
 .left, .right{
@@ -126,7 +126,7 @@ body {
     font-size: .5em;
 }
 
-.signup, .login{
+.signup, .login, .newpost{
     background-color: white;
     padding: 30px;
     border-radius: 20px;
