@@ -1,0 +1,8 @@
+<h1>home</h1>
+<div class="feed">
+    <%for(let post of posts){%>
+        <a class="post" href="/posts/<%= post.id%>">
+            <img class="image" src="<%= post.img_url%>" alt="">
+        </a>
+    <%}%>
+</div>

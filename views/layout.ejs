@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="header">
+
+        <h1>Reel Life</h1>
+        
+        <% if (userId){%>
+            <%= user.user_name%>
+            <% } %>
+            
+            <a href="/">Home</a>
+            <a href="/posts/new">Create a post</a>
+            
+            <% if (userId){%>
+                <a href="/logout">logout</a>
+            <% } else { %>
+                <a href="/login">login</a>
+            <% } %>
+
+    </header>
+    
+    <%- body %>
+</body>
+</html>
