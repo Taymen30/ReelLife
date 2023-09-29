@@ -115,7 +115,7 @@ app.get('/posts/:id', (req, res) => {
                     console.log(err)
                 }
 
-                const creator = creatorResult.rows[0].user_name;
+                const creator = creatorResult.rows[0].user_name
 
                 res.render('display', { post, creator, comments, user: res.locals.user })
             })
@@ -156,7 +156,7 @@ app.post('/login', (req, res) => {
                 } else{
                     return res.render('login')
                 }
-            });
+            })
 
         })
 })
