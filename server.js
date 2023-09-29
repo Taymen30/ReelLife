@@ -147,7 +147,9 @@ app.post('/login', (req, res) => {
             const hashedPassword = dbResult.rows[0].password_digest
 
             bcrypt.compare(userInputPassword, hashedPassword, function(err,bcrResult) {
+                console.log(`hello`, err)
                 if(bcrResult){
+        
                     req.session.userId = dbResult.rows[0].id
                     return res.redirect('/')
                 } else{
