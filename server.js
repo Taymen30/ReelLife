@@ -6,21 +6,22 @@ const session = require('express-session')
 const setCurrentUser = require('./middlewares/set_current_user')
 const methodOverride = require('method-override')
 const ensureLogin = require('./middlewares/ensure_login')
+const MemoryStore = require('memorystore')(session)
 const bcrypt = require('bcrypt')
 const app = express()
 const port = process.env.PORT || 3434;
 
-app.use(
-    session({
-      cookie: { maxAge: 1000 * 60 * 60 * 24 * 3 },
-      secret: process.env.SESSION_SECRET || "mistyrose",
-      resave: false,
-      saveUninitialized: true,
-    })
-  );
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
+app.use(session({
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
+    resave: false,
+    secret: process.env.SESSION_SECRET || 'mistyrose'
+}))
 app.use(setCurrentUser)
 app.use(expressLayouts)
 app.use(express.urlencoded({extended: true}))
@@ -150,7 +151,7 @@ app.post('/login', (req, res) => {
                 console.log(`hello`, err)
                 if(bcrResult){
                     console.log(dbResult.rows[0].id)
-                    // req.session.userId = dbResult.rows[0].id
+                    req.session.userId = dbResult.rows[0].id
                     return res.redirect('/')
                 } else{
                     return res.render('login')
