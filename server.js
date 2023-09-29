@@ -150,7 +150,7 @@ app.post('/login', (req, res) => {
                 console.log(`hello`, err)
                 if(bcrResult){
         
-                    req.session.userId = dbResult.rows[0].id
+                    // req.session.userId = dbResult.rows[0].id
                     return res.redirect('/')
                 } else{
                     return res.render('login')
