@@ -1,7 +1,4 @@
-const pg = require('pg')
-const db = new pg.Pool({
-    database: 'reellife'
-})
+const db = require('../db/index')
 
 function setCurrentUser(req, res, next){
     res.locals.userId = req.session.userId
