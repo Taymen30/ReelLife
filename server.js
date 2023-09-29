@@ -155,8 +155,6 @@ app.post('/login', (req, res) => {
                 } else{
                     return res.render('login')
                 }
-                console.log(err)
-                console.log(dbResult)
             });
 
         })
