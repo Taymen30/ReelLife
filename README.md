@@ -43,6 +43,6 @@ In the future, I plan to implement a few new features to enhance the user experi
 
 - **Advanced CSS Styling**: I am committed to further refining the visual aspects of the application, focusing on providing a seamless and aesthetically pleasing user interface.
 
-Additionally, we plan to implement the **Model-View-Controller (MVC)** architecture to enhance the organization and maintainability of the codebase. This design pattern will help create a more modular and structured application.
+Additionally, I plan to implement the **Model-View-Controller (MVC)** architecture to enhance the organization and maintainability of the codebase. This design pattern will help create a more modular and structured application.
 
 
