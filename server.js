@@ -10,9 +10,6 @@ const bcrypt = require('bcrypt')
 const app = express()
 const port = process.env.PORT || 3434;
 
-app.set('view engine', 'ejs')
-
-app.use(express.static('public'))
 app.use(
     session({
       cookie: { maxAge: 1000 * 60 * 60 * 24 * 3 },
@@ -21,6 +18,9 @@ app.use(
       saveUninitialized: true,
     })
   );
+app.set('view engine', 'ejs')
+
+app.use(express.static('public'))
 app.use(setCurrentUser)
 app.use(expressLayouts)
 app.use(express.urlencoded({extended: true}))
@@ -150,7 +150,7 @@ app.post('/login', (req, res) => {
                 console.log(`hello`, err)
                 if(bcrResult){
         
-                    // req.session.userId = dbResult.rows[0].id
+                    req.session.userId = dbResult.rows[0].id
                     return res.redirect('/')
                 } else{
                     return res.render('login')
