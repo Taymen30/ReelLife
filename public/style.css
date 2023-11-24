@@ -1,143 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
+
+:root {
+  --primary-color: rgb(97 111 112);
+  --secondary-color: rgb(85 150 160);
+  --background-color: #ffffff;
+}
+
 * {
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(124, 152, 146);
-    height: 100%;
-    width: 70%;
-    margin: auto;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  height: 100%;
+  width: 70%;
+  margin: auto;
 }
 .header {
-    position: sticky;
-    background-color: rgba(255, 255, 255, 0.809);
-    top: 0;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 120%;
-    margin: 10px;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 120%;
+  margin: 10px;
+  background-color: var(--background-color);
 }
-
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.logo img {
+  max-height: 200px;
+  max-width: 200px;
+  margin-left: 40px;
+}
+.logo h1 {
+  padding-right: 20px;
+  margin: -30px 0 0 0;
+  font-size: 7em;
+  font-family: "Caveat", cursive;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .header a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    border: 1px solid black; 
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    font-size: 1em;
-    padding: 5px;
-}
-.header a:visited {
-    color: black;
-}
-
-.title{
-    margin: 10px 0;
-    font-size: 4em;
+  text-decoration: none;
+  background-color: var(--background-color);
+  font-size: 1.5em;
+  padding: 5px;
+  font-family: "Caveat";
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+.header a:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+  transform: translateY(-3px);
+}
 
 .bottom {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
 }
 .center {
-    margin: 0 auto;
-    font-size: 20px;
-    
+  margin: 0 auto;
+  font-size: 20px;
 }
 
-.left, .right{
-    display: flex;
-    gap: 10px; 
+.left,
+.right {
+  display: flex;
+  gap: 10px;
 }
 
 .feed {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .post {
-    position: relative;
+  position: relative;
+  transition: transform 0.3s linear;
+}
+.post:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
 }
 
 .post .image {
-    max-width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
+  max-width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgb(88, 88, 88);
 }
 
 .card {
-    border: 1px solid transparent;
-    max-width: 50%;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.765);
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid transparent;
+  max-width: 50%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.765);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .card h2 {
-    font-size: 2em;
+  font-family: "Caveat";
+  margin: 0;
+  font-size: 4em;
 }
 
 .card .description {
-    font-size: 1.2em;
+  font-family: "Caveat";
+  font-size: 1.2em;
 }
 .card .date {
-    font-size: .7em;
+  font-size: 0.7em;
 }
 .card .img {
-    max-width: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px gray;
 }
 
 .card .bottom {
-    display: flex;
-    justify-content: space-between;
-    
+  display: flex;
+  justify-content: space-between;
 }
 .card .creator {
-    font-weight: bold;
+  font-weight: bold;
+  font-family: "Caveat";
 }
 
 .card .bottom .date {
-    margin: 0;
+  margin: 0;
 }
 
 .card .commenter {
-    font-size: .5em;
+  font-size: 0.5em;
 }
 
-.signup, .login, .newpost{
-    background-color: white;
-    padding: 30px;
-    border-radius: 20px;
-    
+.signup,
+.login,
+.newpost {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
 }
 .signup h2 {
-    margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 .login p {
-   padding: 0 0 10px 0;
+  padding: 0 0 10px 0;
 }
 .login h2 {
-    margin-top: 0;
+  margin-top: 0;
 }

@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="logo">
+      <img src="https://i.ibb.co/N7zqWs5/ReelLife.png" alt="ReelLife" />
+
+      <h1>ReelLife</h1>
+    </div>
     <header class="header">
-        <h1 class="title">Reel Life</h1>
-    
-        <footer class="bottom">
-            <div class="left">
-                <a href="/">Home</a>
-                <a href="/posts/new">Create a post</a>
-            </div>
-    
-            <div class="center">
-                <% if (userId) { %>
-                    <%= user.user_name %>
-                <% } %>
-            </div>
-    
-            <div class="right">
-                <% if (userId) { %>
-                    <a href="/logout">Logout</a>
-                <% } else { %>
-                    <a href="/signup">Signup</a>
-                    <a href="/login">Login</a>
-                <% } %>
-            </div>
-        </footer>
+      <footer class="bottom">
+        <div class="left">
+          <a href="/">Home</a>
+          <a href="/posts/new">Create a post</a>
+        </div>
+
+        <div class="right">
+          <% if (userId) { %> <%= user.user_name %> <% } %> <% if (userId) { %>
+          <a href="/logout">Logout</a>
+          <% } else { %>
+          <a href="/signup">Signup</a>
+          <a href="/login">Login</a>
+          <% } %>
+        </div>
+      </footer>
     </header>
 
     <%- body %>
-</body>
+  </body>
 </html>
