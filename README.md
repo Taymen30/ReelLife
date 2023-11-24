@@ -6,7 +6,7 @@ This web application enables users to create and share posts, as well as engage 
 
 ## Screenshots
 
-![img](screenshots/Screenshot%202023-09-29%20at%2010.01.11%20am.png)
+![img](screenshots/Update.png)
 
 ## Features
 
@@ -27,7 +27,7 @@ This web application enables users to create and share posts, as well as engage 
 
 ## Getting Started
 
-To get started, simply click on the following  https://reellife-ub15.onrender.com. This will take you directly to the web application where you can explore and interact with the content.
+To get started, simply click on the following https://reellife-ub15.onrender.com. This will take you directly to the web application where you can explore and interact with the content.
 
 ## Future Enhancements
 
@@ -44,5 +44,3 @@ In the future, I plan to implement a few new features to enhance the user experi
 - **Advanced CSS Styling**: I am committed to further refining the visual aspects of the application, focusing on providing a seamless and aesthetically pleasing user interface.
 
 Additionally, I plan to implement the **Model-View-Controller (MVC)** architecture to enhance the organization and maintainability of the codebase. This design pattern will help create a more modular and structured application.
-
-
